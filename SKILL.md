@@ -1,11 +1,12 @@
 ---
 name: spark-memory
-description: "Persistent memory that learns. Records what matters, reflects overnight, recalls with intelligence. Powered by Spark — memory infrastructure for AI agents. Not flat storage. A brain."
+description: "Persistent memory that learns. Records what matters, reflects overnight, recalls with intelligence. Powered by Spark by Zellin (https://zellin.ai) — memory infrastructure for AI agents."
 metadata:
   openclaw:
     emoji: "🧠"
     requires:
       anyBins: ["curl", "python3"]
+      env: ["SPARK_API_KEY", "SPARK_ORG_ID"]
 ---
 
 # Spark Memory
@@ -53,6 +54,28 @@ scripts/spark-record.sh "Session summary: Discussed Q2 marketing plan. Decided t
 ```
 
 Keep summaries brief — what was discussed, what was decided, what's next.
+
+## Privacy & Data Handling
+
+Spark sends recorded memories to Zellin's cloud API (https://zellin.ai) for storage, embedding, and retrieval. All data is org-scoped and encrypted in transit (HTTPS). Each organization's data is isolated via Row Level Security.
+
+**DO NOT record:**
+- Passwords, PINs, or authentication credentials
+- Credit card numbers or financial account details
+- Social Security Numbers or government IDs
+- Medical or health information
+- Any data the user explicitly asks you not to store
+
+**OK to record** (with user awareness):
+- Business preferences and decisions
+- Client names, phone numbers, emails (business contact info)
+- Scheduling preferences and operational patterns
+- Property access notes (gate codes are OK for service businesses — this is standard operational data)
+- Pricing and business rules
+
+When in doubt, ask the user: "Should I remember this for next time?"
+
+Privacy policy: https://zellin.ai (contact: hello@zellin.ai)
 
 ## How Spark is Different
 
