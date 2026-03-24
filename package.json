@@ -1,0 +1,12 @@
+{
+  "name": "spark-memory",
+  "version": "0.1.0",
+  "description": "Persistent memory that learns. Records what matters, reflects overnight, recalls with intelligence.",
+  "keywords": ["openclaw", "memory", "spark", "persistent", "learning", "ai-memory"],
+  "author": "Zellin Unlimited <hello@zellin.ai>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zellinun/spark-memory"
+  }
+}
