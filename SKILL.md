@@ -33,6 +33,9 @@ When the user shares something important, record it using `scripts/spark-record.
 - **Business facts:** "Gate code for the Johnson property is 4521" → `scripts/spark-record.sh "Johnson property gate code: 4521" observation 7`
 - **Lessons:** "The QuickBooks sync takes 30 seconds, not instant" → `scripts/spark-record.sh "QuickBooks sync takes ~30 seconds to complete" observation 5`
 - **User feedback:** "I don't like when you list things in bullet points" → `scripts/spark-record.sh "User dislikes bullet-point formatting, prefers prose" user_feedback 8`
+- **Explicit rules:** "From now on, always send invoices on Monday" → `scripts/spark-record.sh "Rule: always send invoices on Monday" user_feedback 8`
+- **Correction with frustration:** "I told you before, we don't work Saturdays" → `scripts/spark-record.sh "CORRECTION: Business does not work Saturdays — user has stated this before" user_feedback 9`
+- **Policy declarations:** "Our policy is net-30 payment terms" → `scripts/spark-record.sh "Policy: net-30 payment terms" observation 8`
 
 **Do NOT record:** greetings, acknowledgments, small talk, system messages, things you already know, or anything the user would find creepy to have stored.
 
