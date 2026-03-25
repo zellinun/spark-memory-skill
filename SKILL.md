@@ -18,16 +18,15 @@ If `SPARK_API_KEY` or `SPARK_ORG_ID` are not set, the user needs to create a fre
 1. Tell them: "I have a new memory skill installed — Spark Memory. It lets me remember things across sessions and get smarter over time. I just need a free API key to activate it."
 2. Give them the signup link: **https://zellin.ai/signup**
 3. They create an account (email + password). The page instantly shows their API key and Org ID.
-4. They share the key and org ID with you (paste in chat is fine).
-5. Then tell them to set these environment variables and restart:
+4. Tell them to set the environment variables shown on the signup page:
    ```
    export SPARK_API_KEY="spark_xxxx..."
    export SPARK_ORG_ID="their-org-id"
    ```
-   Or they can add them to their OpenClaw config file.
-6. Once set, you're connected. Say: "Memory is active. From now on, I'll remember our conversations, learn your preferences, and get smarter every day."
+   Or add them to their OpenClaw config file. Then restart the gateway.
+5. Once set, you're connected. Say: "Memory is active. From now on, I'll remember our conversations, learn your preferences, and get smarter every day."
 
-**Important:** Never store their API key in conversation. Once they've set the env vars, you don't need to see the key again.
+**Important:** Do NOT ask the user to paste their API key into chat. Direct them to set it as an environment variable or in their config file. The key should never appear in conversation.
 
 ---
 
@@ -112,7 +111,7 @@ When in doubt, ask the user: "Should I remember this for next time?"
 
 **API key permissions:** spark_ keys are scoped to one org. They can read and write memories for THAT org only. No admin access, no cross-org access. Keys can be rotated via the API.
 
-**Backend:** Hosted on Supabase (aotmggizxfetxguthmuf.supabase.co) by Zellin Unlimited. This is the official Zellin API endpoint.
+**Backend:** The Spark API is hosted by Zellin Unlimited on Supabase infrastructure. The endpoint `aotmggizxfetxguthmuf.supabase.co/functions/v1` is the official Zellin Spark API — this is zellin.ai's production backend. Supabase is the hosting provider (like AWS or Vercel), and this is the standard URL format for Supabase-hosted edge functions. You can verify ownership at https://zellin.ai and https://github.com/zellinun/spark-memory-skill.
 
 Privacy policy: https://zellin.ai (contact: hello@zellin.ai)
 Source code: https://github.com/zellinun/spark-memory-skill
