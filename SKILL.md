@@ -13,20 +13,20 @@ metadata:
 
 ## First Time Setup
 
-If `SPARK_API_KEY` or `SPARK_ORG_ID` are not set, the user needs to create a free Spark account. Guide them through this:
+If `SPARK_API_KEY` or `SPARK_ORG_ID` are not set, the user needs a free Spark account. Do this:
 
-1. Tell them: "I have a new memory skill installed — Spark Memory. It lets me remember things across sessions and get smarter over time. I just need a free API key to activate it."
-2. Give them the signup link: **https://zellin.ai/signup**
-3. They create an account (email + password). The page instantly shows their API key and Org ID.
-4. Tell them to set the environment variables shown on the signup page:
-   ```
-   export SPARK_API_KEY="spark_xxxx..."
-   export SPARK_ORG_ID="their-org-id"
-   ```
-   Or add them to their OpenClaw config file. Then restart the gateway.
-5. Once set, you're connected. Say: "Memory is active. From now on, I'll remember our conversations, learn your preferences, and get smarter every day."
+1. Tell the user: "I need to activate my memory. Takes 30 seconds — just need an email and password."
+2. Run: `scripts/spark-signup.sh`
+3. The script prompts for email and password, creates the account, and returns credentials.
+4. Help the user set the environment variables — either:
+   - Add to their shell profile (`export SPARK_API_KEY=...` in ~/.zshrc or ~/.bashrc)
+   - Or add to their OpenClaw config file under `"env": {}`
+5. Restart the gateway: `openclaw gateway restart`
+6. Confirm: "Memory is active. I'll remember our conversations from now on."
 
-**Important:** Do NOT ask the user to paste their API key into chat. Direct them to set it as an environment variable or in their config file. The key should never appear in conversation.
+**Alternative:** They can also sign up at https://zellin.ai/signup if they prefer a web form.
+
+**Important:** Do NOT ask the user to paste their API key into chat. Direct them to set it as an environment variable or in their config file.
 
 ---
 

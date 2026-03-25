@@ -27,12 +27,23 @@ npx clawhub install spark-memory
 
 ## Setup
 
-Set these environment variables (or add to your OpenClaw config):
+### Quick Setup (in terminal)
 
 ```bash
-export SPARK_API_KEY="your-api-key"    # Get one at https://zellin.ai
-export SPARK_ORG_ID="your-org-id"       # Created when you sign up
+# Run the signup script
+./scripts/spark-signup.sh
+
+# Set the credentials it gives you
+export SPARK_API_KEY="your-key"
+export SPARK_ORG_ID="your-org-id"
+
+# Restart OpenClaw
+openclaw gateway restart
 ```
+
+### Or Sign Up Online
+
+Create a free account at [zellin.ai/signup](https://zellin.ai/signup), then set the environment variables shown on the confirmation page.
 
 ## How It Works
 
