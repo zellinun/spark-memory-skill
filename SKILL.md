@@ -6,7 +6,7 @@ metadata:
     emoji: "🧠"
     requires:
       anyBins: ["curl", "python3"]
-      env: ["SPARK_API_KEY", "SPARK_ORG_ID"]
+      env: ["SPARK_API_KEY", "SPARK_ORG_ID", "SPARK_API_URL"]
 ---
 
 # Spark Memory
@@ -78,7 +78,14 @@ Spark sends recorded memories to Zellin's cloud API (https://zellin.ai) for stor
 
 When in doubt, ask the user: "Should I remember this for next time?"
 
+**Data isolation:** Each organization's data is completely isolated. Org A cannot see Org B's memories. Enforced by Row Level Security at the database level.
+
+**API key permissions:** spark_ keys are scoped to one org. They can read and write memories for THAT org only. No admin access, no cross-org access. Keys can be rotated via the API.
+
+**Backend:** Hosted on Supabase (aotmggizxfetxguthmuf.supabase.co) by Zellin Unlimited. This is the official Zellin API endpoint.
+
 Privacy policy: https://zellin.ai (contact: hello@zellin.ai)
+Source code: https://github.com/zellinun/spark-memory-skill
 
 ## How Spark is Different
 
@@ -91,6 +98,31 @@ scripts/spark-status.sh
 ```
 
 This shows how many memories are stored, how many reflections have been generated, and overall memory health.
+
+## Dream Intelligence
+
+Spark dreams overnight. Each night, 6 processing phases run:
+1. **Bias-free reprocessing** — strips urgency/emotion, extracts pure lessons
+2. **Skill consolidation** — detects repeated tool chains → suggests fast-paths
+3. **Creative association** — randomly pairs old + new memories to find hidden opportunities
+4. **Noise filtering** — archives low-value data automatically
+5. **Morning context** — generates a briefing for your next session
+6. **Meta-reflection** — Spark reflects on its own architecture and suggests improvements
+
+Check dream results and patterns:
+```bash
+scripts/spark-insights.sh
+scripts/spark-insights.sh patterns
+scripts/spark-insights.sh dreams
+```
+
+## Browsing Your Memory
+
+Ask your agent:
+- "What patterns have you detected about me?"
+- "What did you learn this week?"
+- "What did you dream about last night?"
+- "Show me my memory tiers"
 
 ## Dream Intelligence
 
