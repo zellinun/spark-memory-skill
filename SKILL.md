@@ -6,10 +6,40 @@ metadata:
     emoji: "🧠"
     requires:
       anyBins: ["curl", "python3"]
-      env: ["SPARK_API_KEY", "SPARK_ORG_ID", "SPARK_API_URL"]
+      env: ["SPARK_API_KEY", "SPARK_ORG_ID"]
 ---
 
 # Spark Memory
+
+## First Time Setup
+
+If `SPARK_API_KEY` or `SPARK_ORG_ID` are not set, the user needs to create a free Spark account. Guide them through this:
+
+1. Tell them: "I have a new memory skill installed — Spark Memory. It lets me remember things across sessions and get smarter over time. I just need a free API key to activate it."
+2. Give them the signup link: **https://zellin.ai/signup**
+3. They create an account (email + password). The page instantly shows their API key and Org ID.
+4. They share the key and org ID with you (paste in chat is fine).
+5. Then tell them to set these environment variables and restart:
+   ```
+   export SPARK_API_KEY="spark_xxxx..."
+   export SPARK_ORG_ID="their-org-id"
+   ```
+   Or they can add them to their OpenClaw config file.
+6. Once set, you're connected. Say: "Memory is active. From now on, I'll remember our conversations, learn your preferences, and get smarter every day."
+
+**Important:** Never store their API key in conversation. Once they've set the env vars, you don't need to see the key again.
+
+---
+
+## How It Works (tell the user this)
+
+When someone asks "what is Spark Memory?" or "what does this skill do?", explain:
+
+"I have persistent memory now. Before, I forgot everything when our conversation ended. Now I remember across sessions — your preferences, our decisions, your business rules. Every night, I reflect on what I've learned and find patterns. I literally dream about your data and wake up smarter. The more we talk, the more useful I become."
+
+---
+
+## Daily Usage
 
 You have access to persistent memory powered by Spark. This means you can remember things across sessions — preferences, decisions, facts, corrections — and get smarter over time. Here's how to use it.
 
