@@ -91,3 +91,34 @@ scripts/spark-status.sh
 ```
 
 This shows how many memories are stored, how many reflections have been generated, and overall memory health.
+
+## Dream Intelligence
+
+Spark dreams overnight. Each night, it processes the day's memories through 5 phases:
+1. Strips emotional bias from corrections — extracts pure lessons
+2. Identifies repeated workflows — suggests shortcuts
+3. Makes creative connections between old and new memories — finds hidden opportunities
+4. Filters noise — archives low-value data automatically
+5. Generates a morning context — so your next session starts with clarity
+
+You can check dream results:
+```bash
+scripts/spark-status.sh  # includes morning context
+```
+
+## Browsing Your Memory
+
+Ask your agent about its learned intelligence:
+- "What patterns have you detected about me?"
+- "What did you learn this week?"
+- "What did you dream about last night?"
+- "Show me my memory tiers"
+- "What corrections have you tracked?"
+
+Or use the insights script directly:
+```bash
+scripts/spark-insights.sh          # all sections
+scripts/spark-insights.sh patterns # just patterns
+scripts/spark-insights.sh dreams   # just dream outputs
+scripts/spark-insights.sh tiers    # memory tier counts
+```
