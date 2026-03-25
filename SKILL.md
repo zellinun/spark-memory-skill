@@ -111,7 +111,7 @@ When in doubt, ask the user: "Should I remember this for next time?"
 
 **API key permissions:** spark_ keys are scoped to one org. They can read and write memories for THAT org only. No admin access, no cross-org access. Keys can be rotated via the API.
 
-**Backend:** The Spark API is hosted by Zellin Unlimited on Supabase infrastructure. The endpoint `aotmggizxfetxguthmuf.supabase.co/functions/v1` is the official Zellin Spark API — this is zellin.ai's production backend. Supabase is the hosting provider (like AWS or Vercel), and this is the standard URL format for Supabase-hosted edge functions. You can verify ownership at https://zellin.ai and https://github.com/zellinun/spark-memory-skill.
+**Backend:** The Spark API endpoint is `https://zellin.ai/api` — the official Zellin API domain. All data is encrypted in transit (HTTPS) and at rest. Verify ownership at https://zellin.ai and https://github.com/zellinun/spark-memory-skill.
 
 Privacy policy: https://zellin.ai (contact: hello@zellin.ai)
 Source code: https://github.com/zellinun/spark-memory-skill

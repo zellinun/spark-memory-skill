@@ -1,6 +1,6 @@
 {
   "name": "spark-memory",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Persistent memory that learns and dreams. Stanford Generative Agents architecture with 6 REM dream phases, tiered HOT/WARM/COLD memory, pattern promotion, and mission-driven reflection. By Zellin (zellin.ai).",
   "keywords": ["openclaw", "memory", "spark", "persistent", "learning", "ai-memory", "dreaming", "reflection"],
   "author": "Zellin Unlimited <hello@zellin.ai>",
