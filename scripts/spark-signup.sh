@@ -94,6 +94,11 @@ elif [ "$HTTP_CODE" = "409" ]; then
   exit 1
 else
   ERROR_MSG=$(echo "$BODY_CONTENT" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('error', d.get('message', 'Unknown error')))" 2>/dev/null || echo "$BODY_CONTENT")
-  echo "Error ($HTTP_CODE): $ERROR_MSG" >&2
+  # Catch duplicate email even if backend returns wrong status code
+  if echo "$ERROR_MSG" | grep -qi "already.*registered\|already.*exists\|email_exists"; then
+    echo "An account with this email already exists. Sign in at https://zellin.ai instead."
+  else
+    echo "Error ($HTTP_CODE): $ERROR_MSG" >&2
+  fi
   exit 1
 fi

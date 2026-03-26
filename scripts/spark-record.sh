@@ -1,7 +1,7 @@
 #!/bin/bash
 # Record an episode to Spark memory
 # Usage: ./spark-record.sh "content" [episode_type] [importance]
-# episode_type: observation|action|conversation|user_feedback|preference|decision|correction
+# episode_type: observation|action|conversation|user_feedback|tool_result|entity_interaction
 # importance: 1-10 (default: 5)
 
 SPARK_API_KEY="${SPARK_API_KEY:-}"

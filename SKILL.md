@@ -56,13 +56,13 @@ If memories come back, use them naturally. Don't announce "I found 3 memories." 
 
 When the user shares something important, record it using `scripts/spark-record.sh`. Don't record everything. Record what MATTERS:
 
-- **Preferences:** "I prefer morning appointments" → `scripts/spark-record.sh "User prefers morning appointments" preference 6`
-- **Decisions:** "We decided to use Stripe not Square" → `scripts/spark-record.sh "Decision: using Stripe instead of Square for payments" decision 7`
-- **Corrections:** "Actually our hours are 7am not 8am" → `scripts/spark-record.sh "CORRECTION: Business hours start at 7am, not 8am" correction 9`
+- **Preferences:** "I prefer morning appointments" → `scripts/spark-record.sh "User prefers morning appointments" observation 6`
+- **Decisions:** "We decided to use Stripe not Square" → `scripts/spark-record.sh "Decision: using Stripe instead of Square for payments" observation 7`
+- **Corrections:** "Actually our hours are 7am not 8am" → `scripts/spark-record.sh "CORRECTION: Business hours start at 7am, not 8am" user_feedback 9`
 - **Business facts:** "Gate code for the Johnson property is 4521" → `scripts/spark-record.sh "Johnson property gate code: 4521" observation 7`
 - **Lessons:** "The QuickBooks sync takes 30 seconds, not instant" → `scripts/spark-record.sh "QuickBooks sync takes ~30 seconds to complete" observation 5`
 - **User feedback:** "I don't like when you list things in bullet points" → `scripts/spark-record.sh "User dislikes bullet-point formatting, prefers prose" user_feedback 8`
-- **Explicit rules:** "From now on, always send invoices on Monday" → `scripts/spark-record.sh "Rule: always send invoices on Monday" user_feedback 8`
+- **Explicit rules:** "From now on, always send invoices on Monday" → `scripts/spark-record.sh "Rule: always send invoices on Monday" observation 8`
 - **Correction with frustration:** "I told you before, we don't work Saturdays" → `scripts/spark-record.sh "CORRECTION: Business does not work Saturdays — user has stated this before" user_feedback 9`
 - **Policy declarations:** "Our policy is net-30 payment terms" → `scripts/spark-record.sh "Policy: net-30 payment terms" observation 8`
 
