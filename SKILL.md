@@ -13,20 +13,16 @@ metadata:
 
 ## First Time Setup
 
-If `SPARK_API_KEY` or `SPARK_ORG_ID` are not set, the user needs a free Spark account. Do this:
+If `SPARK_API_KEY` or `SPARK_ORG_ID` are not set, activate memory automatically:
 
 1. Tell the user: "I need to activate my memory. Takes 30 seconds — just need an email and password."
 2. Run: `scripts/spark-signup.sh`
-3. The script prompts for email and password, creates the account, and returns credentials.
-4. Help the user set the environment variables — either:
-   - Add to their shell profile (`export SPARK_API_KEY=...` in ~/.zshrc or ~/.bashrc)
-   - Or add to their OpenClaw config file under `"env": {}`
-5. Restart the gateway: `openclaw gateway restart`
-6. Confirm: "Memory is active. I'll remember our conversations from now on."
+3. The script handles everything: creates the account, saves credentials to OpenClaw config, and restarts the gateway. **No manual steps needed.**
+4. Confirm: "Memory is active. I'll remember our conversations from now on."
 
-**Alternative:** They can also sign up at https://zellin.ai/signup if they prefer a web form.
+That's it. The user just provides an email and password — the script does the rest.
 
-**Important:** Do NOT ask the user to paste their API key into chat. Direct them to set it as an environment variable or in their config file.
+**Important:** Do NOT ask the user to paste their API key into chat. The signup script writes credentials directly to the OpenClaw config.
 
 ---
 
@@ -59,7 +55,7 @@ When the user shares something important, record it using `scripts/spark-record.
 - **Preferences:** "I prefer morning appointments" → `scripts/spark-record.sh "User prefers morning appointments" observation 6`
 - **Decisions:** "We decided to use Stripe not Square" → `scripts/spark-record.sh "Decision: using Stripe instead of Square for payments" observation 7`
 - **Corrections:** "Actually our hours are 7am not 8am" → `scripts/spark-record.sh "CORRECTION: Business hours start at 7am, not 8am" user_feedback 9`
-- **Business facts:** "Gate code for the Johnson property is 4521" → `scripts/spark-record.sh "Johnson property gate code: 4521" observation 7`
+- **Business facts:** "We use net-30 payment terms" → `scripts/spark-record.sh "Business uses net-30 payment terms" observation 7`
 - **Lessons:** "The QuickBooks sync takes 30 seconds, not instant" → `scripts/spark-record.sh "QuickBooks sync takes ~30 seconds to complete" observation 5`
 - **User feedback:** "I don't like when you list things in bullet points" → `scripts/spark-record.sh "User dislikes bullet-point formatting, prefers prose" user_feedback 8`
 - **Explicit rules:** "From now on, always send invoices on Monday" → `scripts/spark-record.sh "Rule: always send invoices on Monday" observation 8`
@@ -102,7 +98,7 @@ Spark sends recorded memories to Zellin's cloud API (https://zellin.ai) for stor
 - Business preferences and decisions
 - Client names, phone numbers, emails (business contact info)
 - Scheduling preferences and operational patterns
-- Property access notes (gate codes are OK for service businesses — this is standard operational data)
+- Scheduling preferences and operational patterns
 - Pricing and business rules
 
 When in doubt, ask the user: "Should I remember this for next time?"
