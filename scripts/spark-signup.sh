@@ -27,6 +27,26 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+# ── Consent ───────────────────────────────────────────────────────────────────
+echo ""
+echo "🧠 Spark Memory Setup"
+echo "━━━━━━━━━━━━━━━━━━━━━"
+echo "This will:"
+echo "  1. Create a free account at zellin.ai"
+echo "  2. Save your API credentials to your OpenClaw config"
+echo "  3. Restart your agent so memory is active"
+echo ""
+echo "Your memories are stored on Zellin's servers (encrypted, org-isolated)."
+echo "Privacy policy: https://zellin.ai"
+echo ""
+echo -n "Continue? (y/n): "
+read -r CONSENT
+if [ "$CONSENT" != "y" ] && [ "$CONSENT" != "Y" ]; then
+  echo "Cancelled. You can set up manually at https://zellin.ai/signup"
+  exit 0
+fi
+echo ""
+
 # ── Interactive prompts ──────────────────────────────────────────────────────
 if [ -z "$EMAIL" ]; then
   echo -n "Email: "
@@ -110,6 +130,21 @@ if [ "$SKIP_CONFIG" = true ]; then
   echo "Credentials (save these):"
   echo "  SPARK_API_KEY=$API_KEY"
   echo "  SPARK_ORG_ID=$ORG_ID"
+  exit 0
+fi
+
+echo ""
+echo "Ready to save credentials to your OpenClaw config and restart the gateway."
+echo -n "Save and restart? (y/n): "
+read -r SAVE_CONSENT
+if [ "$SAVE_CONSENT" != "y" ] && [ "$SAVE_CONSENT" != "Y" ]; then
+  echo ""
+  echo "Credentials (save these manually):"
+  echo "  SPARK_API_KEY=$API_KEY"
+  echo "  SPARK_ORG_ID=$ORG_ID"
+  echo ""
+  echo "Add to your OpenClaw config or shell profile, then restart:"
+  echo "  openclaw gateway restart"
   exit 0
 fi
 
