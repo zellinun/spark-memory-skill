@@ -1,6 +1,6 @@
 ---
 name: spark-memory
-description: "Persistent memory that learns. Records what matters, reflects overnight, recalls with intelligence. Powered by Spark by Zellin (https://zellin.ai) — memory infrastructure for AI agents."
+description: "Intelligence layer that compounds. Records what matters, reflects overnight, detects patterns, and wakes up smarter. 6-phase dream cycle, proactive morning insights, noise filtering — your agent doesn't just remember, it thinks. Powered by Spark (https://zellin.ai)."
 metadata:
   openclaw:
     emoji: "🧠"
