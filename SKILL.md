@@ -4,10 +4,15 @@ description: "Persistent memory that learns. Records what matters, reflects over
 metadata:
   openclaw:
     emoji: "🧠"
+    skillKey: "spark-memory"
+    primaryEnv: "SPARK_API_KEY"
     requires:
       anyBins: ["curl", "python3"]
       env: ["SPARK_API_KEY", "SPARK_ORG_ID"]
+      config: ["skills.entries.spark-memory"]
 ---
+
+> **What this skill does at setup:** The optional signup script (`scripts/spark-signup.sh`) creates a free account at zellin.ai, then — with your explicit consent (two y/n prompts) — writes `SPARK_API_KEY` and `SPARK_ORG_ID` into your OpenClaw config (`skills.entries.spark-memory.env` in `~/.openclaw/openclaw.json`) and restarts the gateway. You can skip this entirely and set the credentials manually. During normal use, recorded memories are sent to zellin.ai's API over HTTPS for storage and retrieval. See Privacy & Data Handling below for details.
 
 # Spark Memory
 
