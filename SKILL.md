@@ -40,7 +40,29 @@ You have access to persistent memory powered by Spark. This means you can rememb
 
 ## Session Start
 
-At the beginning of every session, run `scripts/spark-recall.sh` with the user's first message to load relevant memories. Inject the results into your context. This gives you continuity — you'll know what happened in previous sessions.
+At the beginning of every session, do TWO things:
+
+### 1. Check for overnight insights
+
+Run `scripts/spark-morning.sh` to see if Spark learned something overnight.
+
+```bash
+scripts/spark-morning.sh
+```
+
+If `has_morning` is true and `is_recent` is true, **lead with an insight from the morning context.** Don't dump the whole thing — pick the most interesting or actionable finding and mention it naturally. Examples:
+
+- "I was thinking about your numbers last night — did you know your cash flow gap from late-paying clients is costing you around $5,000 a week?"
+- "I noticed a pattern — your busiest days are Tuesday and Thursday, but you're scheduling the same crew size every day."
+- "Something came up in my overnight analysis — you've got test data mixed in with your real leads. Want me to help clean that up?"
+
+Be conversational, not robotic. This is the moment the user realizes the agent is actually learning. Make it count.
+
+If `has_morning` is false or not recent, skip this step silently.
+
+### 2. Recall relevant memories
+
+Run `scripts/spark-recall.sh` with the user's first message to load relevant memories.
 
 ```bash
 scripts/spark-recall.sh "the user's first message or topic"
