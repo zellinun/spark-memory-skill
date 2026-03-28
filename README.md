@@ -1,77 +1,65 @@
-# 🧠 Spark Memory — Persistent Intelligence for OpenClaw Agents
+# 🧠 Spark Memory
 
 **Your agent forgets everything when the session ends. Spark fixes that.**
 
-Spark gives your OpenClaw agent a memory that compounds. Not flat storage — a brain that reflects, learns patterns, and gets smarter every day.
-
-## What Makes Spark Different
-
-| Feature | memory-core | memory-lancedb | **Spark** |
-|---------|------------|----------------|-----------|
-| Store memories | ✅ (files) | ✅ (vectors) | ✅ (vectors) |
-| Semantic search | ❌ | ✅ | ✅ |
-| Importance scoring | ❌ | Static 0.7 | **Dynamic (1-10)** |
-| Nightly reflection | ❌ | ❌ | **✅ Synthesizes patterns** |
-| Recency × Relevance scoring | ❌ | ❌ | **✅ Stanford formula** |
-| Cross-session learning | ❌ | ✅ | **✅ + reflection** |
-| Episode types | ❌ | Basic categories | **7 types** |
-| Multi-user support | ❌ | ❌ | **✅ Org-scoped** |
-| Survives device loss | ❌ | ❌ | **✅ Cloud-backed** |
-| Selective capture | ❌ | Trigger-based | **✅ Intelligence-based** |
-
-## Install
+## Install (one command)
 
 ```bash
-npx clawhub install spark-memory
+openclaw skills install spark-memory
 ```
 
-## Setup
+That's it. Your agent will walk you through creating a free account the first time it runs — just an email and password. No config files, no environment variables, no restart commands.
 
-### Quick Setup (in terminal)
+---
 
-```bash
-# Run the signup script
-./scripts/spark-signup.sh
+## What Happens After Install
 
-# Set the credentials it gives you
-export SPARK_API_KEY="your-key"
-export SPARK_ORG_ID="your-org-id"
-
-# Restart OpenClaw
-openclaw gateway restart
-```
-
-### Or Sign Up Online
-
-Create a free account at [zellin.ai/signup](https://zellin.ai/signup), then set the environment variables shown on the confirmation page.
-
-## How It Works
-
-1. **Session starts** → Spark recalls relevant memories from previous sessions
-2. **During conversation** → Spark records important facts, preferences, decisions
-3. **Session ends** → Spark saves a conversation summary
-4. **Every night** → Spark reflects on accumulated memories, synthesizes patterns, detects recurring behaviors
-5. **Next session** → Your agent is smarter than yesterday
+1. **First session** — your agent says "I need to activate my memory" and walks you through a 30-second setup
+2. **Every session after** — your agent remembers your previous conversations, preferences, and decisions
+3. **Every night** — Spark reflects on what it learned and finds patterns you didn't notice
+4. **Next morning** — your agent opens with something it figured out overnight, unprompted
 
 Day 1: knows nothing.
 Day 30: knows your preferences, your clients, your patterns.
 Day 365: knows more about your operations than you remember yourself.
 
-## Architecture
+## What Makes Spark Different
 
-Based on Stanford's ["Generative Agents" paper](https://arxiv.org/abs/2304.03442) with extensions:
-- Memory Stream (episodes) → Reflection (synthesis) → Patterns (recurring behaviors)
-- Retrieval scored by Recency × Importance × Relevance
-- Org-scoped: multiple users feed one shared memory
-- Cloud-backed: memories survive device changes
+Most memory skills store text and retrieve it. Spark **thinks about what it stores.**
+
+- **Dynamic importance scoring** — not everything is equally worth remembering
+- **Nightly reflection** — synthesizes daily events into insights and patterns
+- **Dream cycle** — 6 overnight processing phases that strip bias, find connections, filter noise
+- **Proactive morning insights** — your agent leads with what it learned, without being asked
+- **Org-scoped** — multiple users and agents share one unified memory
+- **Cloud-backed** — memories survive device changes and session resets
+
+## How It Works
+
+```
+You talk to your agent
+        ↓
+Agent records what matters (not everything — just what's important)
+        ↓
+Every night, Spark reflects → finds patterns → filters noise
+        ↓
+Next morning, your agent is smarter than yesterday
+```
+
+## Privacy
+
+- Your data is encrypted in transit (HTTPS) and isolated per organization
+- Your agent is instructed never to record passwords, SSNs, or health data
+- You can delete your data anytime — contact hello@zellin.ai
+- [Privacy policy](https://zellin.ai) | [Source code](https://github.com/zellinun/spark-memory-skill)
 
 ## Free Tier
 
 - 100 episodes/month
-- Basic recall
 - Nightly reflection included
-- [Sign up at zellin.ai](https://zellin.ai)
+- Proactive morning insights included
+- [zellin.ai](https://zellin.ai)
 
 ## License
 
-MIT
+MIT-0 — Free to use, modify, and redistribute.
