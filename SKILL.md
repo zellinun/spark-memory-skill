@@ -100,15 +100,29 @@ When the user shares something important, record it using `scripts/spark-record.
 
 When in doubt, score a 5. Corrections should almost always be 8+.
 
-## Session End
+## Periodic Session Capture
 
-At the end of a conversation (or when the topic naturally wraps), record a session summary:
+**Don't wait for the session to end.** Most users never explicitly end sessions.
+
+Every ~10 exchanges, or when you notice a natural topic shift, record 3-5 **granular episodes** — not one summary. Each episode should be a specific decision, outcome, or fact:
 
 ```bash
-scripts/spark-record.sh "Session summary: Discussed Q2 marketing plan. Decided to focus on Instagram over TikTok. User wants draft copy by Friday." conversation 5
+# Good: specific, recallable
+scripts/spark-record.sh "Decision: switching from Square to Stripe for payments" action 7
+scripts/spark-record.sh "Client Erys Phillips approved $19,950 removal job in Rolando" action 8
+scripts/spark-record.sh "User prefers morning appointments before 10am" observation 6
+
+# Bad: vague summary blob
+scripts/spark-record.sh "Discussed various business topics including payments and clients" conversation 4
 ```
 
-Keep summaries brief — what was discussed, what was decided, what's next.
+Each episode should be independently useful when recalled later. Ask yourself: "If someone searched for this topic in 3 months, would this episode answer their question?"
+
+Also record when a conversation **naturally wraps** (user says thanks, goodbye, or shifts to a completely different topic):
+
+```bash
+scripts/spark-record.sh "Session wrap: decided on Stripe, Erys job approved, morning preference noted. Open item: send Erys invoice by Friday." conversation 6
+```
 
 ## Privacy & Data Handling
 
